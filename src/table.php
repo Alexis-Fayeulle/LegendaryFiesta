@@ -104,7 +104,6 @@ function table(array $array2D, string $implode_line_str = ' | ', string $strpad_
             $line[] = str_pad($element_string, $col_len, $strpad_pad_string, $strpad_pad_type);
         }
 
-        var_dump($line);
         $display[] = implode($implode_line_str, $line);
     }
 
