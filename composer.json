@@ -2,7 +2,7 @@
     "name": "atyklaxas/legendaryfiesta",
     "description": "Personal php functions",
     "autoload": {
-        "files": ["src/*.php"]
+        "files": ["src/autoload.php"]
     },
     "authors": [
         {
