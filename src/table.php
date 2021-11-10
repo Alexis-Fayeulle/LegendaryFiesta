@@ -1,4 +1,6 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace AtyKlaxas\LegendaryFiesta;
 
 /**
  * Fonction de debug qui permet d'afficher un objet a 2 dimension

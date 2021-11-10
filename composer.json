@@ -2,9 +2,7 @@
     "name": "atyklaxas/legendaryfiesta",
     "description": "Personal php functions",
     "autoload": {
-        "psr-4": {
-            "AtyKlaxas\\LegendaryFiesta\\": "src/"
-        }
+        "files": ["src/*.php"]
     },
     "authors": [
         {
