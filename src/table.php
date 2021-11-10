@@ -86,11 +86,25 @@ function table(array $array2D, string $implode_line_str = ' | ', string $strpad_
         $line = [];
 
         for ($j = 0; $j < count($keys2); $j++) {
+            // try to stringify element
+            $element = $array2D[ $keys[$i] ][ $keys2[$j] ];
             $col_len = $columns[$j];
+
+            try {
+                $element_string = (string) $element;
+            } catch (\Throwable $th) {
+                $type = gettype($element);
+                $element_string = $type;
+
+                if ($type === 'object') {
+                    $element_string .= ' ' . get_class($element);
+                }
+            }
 
             $line[] = str_pad($element_string, $col_len, $strpad_pad_string, $strpad_pad_type);
         }
 
+        var_dump($line);
         $display[] = implode($implode_line_str, $line);
     }
 
