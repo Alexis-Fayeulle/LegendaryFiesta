@@ -108,5 +108,5 @@ function table(array $array2D, string $implode_line_str = ' | ', string $strpad_
     }
 
     // echo result
-    echo implode(PHP_EOL, $display) . PHP_EOL;
+    echo PHP_EOL . implode(PHP_EOL, $display) . PHP_EOL;
 }
