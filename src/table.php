@@ -7,11 +7,12 @@ namespace AtyKlaxas\LegendaryFiesta;
  *
  * @param mixed[] $array2D Tableau a 2 dimension
  * @param bool $use_keys Ignorer les clefs et affichier le tableau par les position
+ * @param string $head_char_delimiter Char sur lequel le head vas se delimiter du body de la table
  * @param string $implode_line_str String sur laquelle les lignes vont se joindres
  * @param string $strpad_pad_string Pour le str_pad(), String de remplissage du vide
  * @param int $strpad_pad_type Pour le str_pad(), Type de remplissage
  */
-function table(array $array2D, bool $use_keys = false, string $implode_line_str = ' | ', string $strpad_pad_string = ' ', int $strpad_pad_type = STR_PAD_RIGHT): void
+function table(array $array2D, bool $use_keys = false, string $head_char_delimiter = '-', string $implode_line_str = ' | ', string $strpad_pad_string = ' ', int $strpad_pad_type = STR_PAD_RIGHT): void
 {
     if (empty($array2D)) {
         echo 'Impossible d\'afficher cela, Entrée vide' . PHP_EOL;
@@ -113,7 +114,10 @@ function table(array $array2D, bool $use_keys = false, string $implode_line_str 
     }
 
     if ($use_keys) {
-        array_unshift($display, implode($implode_line_str, $all_keys));
+        $imploded = implode($implode_line_str, $all_keys);
+        // or mb_strlen ?
+        array_unshift($display, str_repeat(substr($head_char_delimiter, 0, 1), strlen($imploded)));
+        array_unshift($display, $imploded);
     }
 
     // echo result
