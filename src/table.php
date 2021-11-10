@@ -12,6 +12,12 @@ namespace AtyKlaxas\LegendaryFiesta;
  */
 function table(array $array2D, string $implode_line_str = ' | ', string $strpad_pad_string = ' ', int $strpad_pad_type = STR_PAD_RIGHT): void
 {
+    if (empty($array2D)) {
+        echo 'Impossible d\'afficher cela, Entrée vide' . PHP_EOL;
+
+        return;
+    }
+
     // $array2D is list of array ?
     $keys = array_keys($array2D);
 
